@@ -1,0 +1,138 @@
+﻿
+@{
+    ViewBag.Title = "ViewMain";
+    if (!(ViewContext.ViewBag.Title == "Login"))
+    {
+        Layout = "~/Views/Shared/_layout.cshtml";
+    }
+}
+
+
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+    <title></title>
+    <style type="text/css">
+        .panel {
+            background-color: dodgerblue;
+        }
+
+        .auto-style1 {
+            height: 23px;
+            background-color: dodgerblue;
+            color: white;
+        }
+
+        .table1 {
+            padding: 0;
+        }
+
+        .auto-style2 {
+            width: 644px;
+        }
+
+        .auto-style3 {
+            width: 130px;
+        }
+
+        .auto-style4 {
+            width: 316px;
+        }
+
+        .auto-style5 {
+            width: 93px;
+        }
+
+        .auto-style6 {
+            width: 168px;
+        }
+
+        .auto-style7 {
+            width: 42px;
+        }
+
+        th {
+            width: 132px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <form>
+            <table class="table1">
+                <tr>
+                    <td colspan="6" class="auto-style1">
+                        View
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style4"></td>
+                    <td class="auto-style6">
+                        IMEI
+                    </td>
+                    <td class="auto-style3">
+                        <select>
+                            <option value="0">None selected</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style4"></td>
+                    <td class="auto-style6">
+                        From Date
+                    </td>
+                    <td class="auto-style3">
+                        <input type="date" id="fromdate" />
+                    </td>
+                    <td class="auto-style5">
+                        To Date
+                    </td>
+                    <td class="auto-style2">
+                        <input type="date" id="todate" />
+                    </td>
+                </tr>
+                <tr rowspan="4">
+                    <td class="auto-style4"></td>
+                    <td class="auto-style6"></td>
+                    <td class="auto-style3">
+                        <input type="button" value="Search" class="btn btn-primary" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <div>
+        <form>
+            <div>
+                Show
+                <select class="auto-style7">
+                    <option>10</option>
+                    <option>20</option>
+                    <option>50</option>
+                </select>
+                entries
+            </div>
+            <div>
+                <table class="table table-bordered">
+                    <tr>
+                        <th>IMEI</th>
+                        <th>BUMON NAME</th>
+                        <th>STORE NAME</th>
+                        <th>PRODUCT NAME</th>
+                        <th>VIEW DATE</th>
+                        <th>VIEWS</th>
+                        <th>INSERT DATE</th>
+                        <th>UPDATE DATE</th>
+                    </tr>
+                </table>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
+
+

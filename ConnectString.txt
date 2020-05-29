@@ -1,0 +1,1 @@
+metadata=res://*/Models.StoreDataModel.csdl|res://*/Models.StoreDataModel.ssdl|res://*/Models.StoreDataModel.msl;provider=System.Data.SqlClient;provider connection string="data source=CV06006D\SQLEXPRESS;initial catalog=Webmvc;user id=sa;password=***********;MultipleActiveResultSets=True;App=EntityFramework"

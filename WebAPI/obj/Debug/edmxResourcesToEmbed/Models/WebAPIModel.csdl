@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WebmvcModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="SVR_BUMON">
+    <Key>
+      <PropertyRef Name="BUMON_ID" />
+    </Key>
+    <Property Name="BUMON_ID" Type="Int32" Nullable="false" />
+    <Property Name="BUMON_CD" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="BUMON_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="COMPANY_ID" Type="Int32" />
+    <Property Name="INSERT_DATE" Type="DateTime" Precision="3" />
+    <Property Name="INSERT_USER" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UPDATE_DATE" Type="DateTime" Precision="3" />
+    <Property Name="UPDATE_USER" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="DEL_FLAG" Type="Int32" />
+    <NavigationProperty Name="SVR_COMPANY" Relationship="Self.FK__SVR_BUMON__COMPA__36B12243" FromRole="SVR_BUMON" ToRole="SVR_COMPANY" />
+    <NavigationProperty Name="SVR_USER" Relationship="Self.FK__SVR_USER__BUMON___3A81B327" FromRole="SVR_BUMON" ToRole="SVR_USER" />
+    <NavigationProperty Name="SVR_VIEW" Relationship="Self.FK__SVR_VIEW__BUMON___4F7CD00D" FromRole="SVR_BUMON" ToRole="SVR_VIEW" />
+  </EntityType>
+  <EntityType Name="SVR_COMPANY">
+    <Key>
+      <PropertyRef Name="COMPANY_ID" />
+    </Key>
+    <Property Name="COMPANY_ID" Type="Int32" Nullable="false" />
+    <Property Name="COMPANY_CD" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="COMPANY_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="INSERT_DATE" Type="DateTime" Precision="3" />
+    <Property Name="INSERT_USER" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UPDATE_DATE" Type="DateTime" Precision="3" />
+    <Property Name="UPDATE_USER" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="DEL_FLAG" Type="Int32" />
+    <NavigationProperty Name="SVR_BUMON" Relationship="Self.FK__SVR_BUMON__COMPA__36B12243" FromRole="SVR_COMPANY" ToRole="SVR_BUMON" />
+    <NavigationProperty Name="SVR_USER" Relationship="Self.FK__SVR_USER__COMPAN__398D8EEE" FromRole="SVR_COMPANY" ToRole="SVR_USER" />
+  </EntityType>
+  <EntityType Name="SVR_DEVICE">
+    <Key>
+      <PropertyRef Name="IMEI" />
+    </Key>
+    <Property Name="IMEI" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TOKEN" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="MODEL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="MAKER" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="INSERT_DATE" Type="DateTime" Precision="3" />
+    <Property Name="INSERT_USER" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UPDATE_DATE" Type="DateTime" Precision="3" />
+    <Property Name="UPDATE_USER" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="DEL_FLAG" Type="Int32" />
+    <NavigationProperty Name="SVR_VIEW" Relationship="Self.FK__SVR_VIEW__IMEI__4E88ABD4" FromRole="SVR_DEVICE" ToRole="SVR_VIEW" />
+  </EntityType>
+  <EntityType Name="SVR_STORE">
+    <Key>
+      <PropertyRef Name="STORE_CD" />
+    </Key>
+    <Property Name="STORE_CD" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="STORE_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="INSERT_DATE" Type="DateTime" Precision="3" />
+    <Property Name="INSERT_USER" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UPDATE_DATE" Type="DateTime" Precision="3" />
+    <Property Name="UPDATE_USER" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="DEL_FLAG" Type="Int32" />
+    <NavigationProperty Name="SVR_VIEW" Relationship="Self.FK__SVR_VIEW__STORE___5070F446" FromRole="SVR_STORE" ToRole="SVR_VIEW" />
+  </EntityType>
+  <EntityType Name="SVR_USER">
+    <Key>
+      <PropertyRef Name="USERNAME" />
+    </Key>
+    <Property Name="USERNAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PASSWORD" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="COMPANY_ID" Type="Int32" />
+    <Property Name="BUMON_ID" Type="Int32" />
+    <Property Name="INSERT_DATE" Type="DateTime" Precision="3" />
+    <Property Name="INSERT_USER" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UPDATE_DATE" Type="DateTime" Precision="3" />
+    <Property Name="UPDATE_USER" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="DEL_FLAG" Type="Int32" />
+    <NavigationProperty Name="SVR_BUMON" Relationship="Self.FK__SVR_USER__BUMON___3A81B327" FromRole="SVR_USER" ToRole="SVR_BUMON" />
+    <NavigationProperty Name="SVR_COMPANY" Relationship="Self.FK__SVR_USER__COMPAN__398D8EEE" FromRole="SVR_USER" ToRole="SVR_COMPANY" />
+  </EntityType>
+  <EntityType Name="SVR_VIEW">
+    <Key>
+      <PropertyRef Name="LOG_ID" />
+    </Key>
+    <Property Name="LOG_ID" Type="Int32" Nullable="false" />
+    <Property Name="IMEI" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="BUMON_ID" Type="Int32" />
+    <Property Name="STORE_CD" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="PRODUCT_ID" Type="Int32" />
+    <Property Name="VIEW_DATE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="GENDER" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="AGE" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="VIEWS" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="INSERT_DATE" Type="DateTime" Precision="3" />
+    <Property Name="UPDATE_DATE" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="SVR_BUMON" Relationship="Self.FK__SVR_VIEW__BUMON___4F7CD00D" FromRole="SVR_VIEW" ToRole="SVR_BUMON" />
+    <NavigationProperty Name="SVR_DEVICE" Relationship="Self.FK__SVR_VIEW__IMEI__4E88ABD4" FromRole="SVR_VIEW" ToRole="SVR_DEVICE" />
+    <NavigationProperty Name="SVR_STORE" Relationship="Self.FK__SVR_VIEW__STORE___5070F446" FromRole="SVR_VIEW" ToRole="SVR_STORE" />
+  </EntityType>
+  <Association Name="FK__SVR_BUMON__COMPA__36B12243">
+    <End Role="SVR_COMPANY" Type="Self.SVR_COMPANY" Multiplicity="0..1" />
+    <End Role="SVR_BUMON" Type="Self.SVR_BUMON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SVR_COMPANY">
+        <PropertyRef Name="COMPANY_ID" />
+      </Principal>
+      <Dependent Role="SVR_BUMON">
+        <PropertyRef Name="COMPANY_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SVR_USER__BUMON___3A81B327">
+    <End Role="SVR_BUMON" Type="Self.SVR_BUMON" Multiplicity="0..1" />
+    <End Role="SVR_USER" Type="Self.SVR_USER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SVR_BUMON">
+        <PropertyRef Name="BUMON_ID" />
+      </Principal>
+      <Dependent Role="SVR_USER">
+        <PropertyRef Name="BUMON_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SVR_VIEW__BUMON___4F7CD00D">
+    <End Role="SVR_BUMON" Type="Self.SVR_BUMON" Multiplicity="0..1" />
+    <End Role="SVR_VIEW" Type="Self.SVR_VIEW" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SVR_BUMON">
+        <PropertyRef Name="BUMON_ID" />
+      </Principal>
+      <Dependent Role="SVR_VIEW">
+        <PropertyRef Name="BUMON_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SVR_USER__COMPAN__398D8EEE">
+    <End Role="SVR_COMPANY" Type="Self.SVR_COMPANY" Multiplicity="0..1" />
+    <End Role="SVR_USER" Type="Self.SVR_USER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SVR_COMPANY">
+        <PropertyRef Name="COMPANY_ID" />
+      </Principal>
+      <Dependent Role="SVR_USER">
+        <PropertyRef Name="COMPANY_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SVR_VIEW__IMEI__4E88ABD4">
+    <End Role="SVR_DEVICE" Type="Self.SVR_DEVICE" Multiplicity="0..1" />
+    <End Role="SVR_VIEW" Type="Self.SVR_VIEW" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SVR_DEVICE">
+        <PropertyRef Name="IMEI" />
+      </Principal>
+      <Dependent Role="SVR_VIEW">
+        <PropertyRef Name="IMEI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SVR_VIEW__STORE___5070F446">
+    <End Role="SVR_STORE" Type="Self.SVR_STORE" Multiplicity="0..1" />
+    <End Role="SVR_VIEW" Type="Self.SVR_VIEW" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SVR_STORE">
+        <PropertyRef Name="STORE_CD" />
+      </Principal>
+      <Dependent Role="SVR_VIEW">
+        <PropertyRef Name="STORE_CD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="WebmvcEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="SVR_BUMON" EntityType="Self.SVR_BUMON" />
+    <EntitySet Name="SVR_COMPANY" EntityType="Self.SVR_COMPANY" />
+    <EntitySet Name="SVR_DEVICE" EntityType="Self.SVR_DEVICE" />
+    <EntitySet Name="SVR_STORE" EntityType="Self.SVR_STORE" />
+    <EntitySet Name="SVR_USER" EntityType="Self.SVR_USER" />
+    <EntitySet Name="SVR_VIEW" EntityType="Self.SVR_VIEW" />
+    <AssociationSet Name="FK__SVR_BUMON__COMPA__36B12243" Association="Self.FK__SVR_BUMON__COMPA__36B12243">
+      <End Role="SVR_COMPANY" EntitySet="SVR_COMPANY" />
+      <End Role="SVR_BUMON" EntitySet="SVR_BUMON" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SVR_USER__BUMON___3A81B327" Association="Self.FK__SVR_USER__BUMON___3A81B327">
+      <End Role="SVR_BUMON" EntitySet="SVR_BUMON" />
+      <End Role="SVR_USER" EntitySet="SVR_USER" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SVR_VIEW__BUMON___4F7CD00D" Association="Self.FK__SVR_VIEW__BUMON___4F7CD00D">
+      <End Role="SVR_BUMON" EntitySet="SVR_BUMON" />
+      <End Role="SVR_VIEW" EntitySet="SVR_VIEW" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SVR_USER__COMPAN__398D8EEE" Association="Self.FK__SVR_USER__COMPAN__398D8EEE">
+      <End Role="SVR_COMPANY" EntitySet="SVR_COMPANY" />
+      <End Role="SVR_USER" EntitySet="SVR_USER" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SVR_VIEW__IMEI__4E88ABD4" Association="Self.FK__SVR_VIEW__IMEI__4E88ABD4">
+      <End Role="SVR_DEVICE" EntitySet="SVR_DEVICE" />
+      <End Role="SVR_VIEW" EntitySet="SVR_VIEW" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SVR_VIEW__STORE___5070F446" Association="Self.FK__SVR_VIEW__STORE___5070F446">
+      <End Role="SVR_STORE" EntitySet="SVR_STORE" />
+      <End Role="SVR_VIEW" EntitySet="SVR_VIEW" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

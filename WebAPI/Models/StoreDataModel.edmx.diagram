@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="560f2fdce1904b45ad5268b815e3b568" Name="Diagram1">
+        <EntityTypeShape EntityType="WebmvcModel1.SVR_STORE" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebmvcModel1.SVR_BUMON" Width="1.5" PointX="4.5" PointY="0.5" />
+        <EntityTypeShape EntityType="WebmvcModel1.SVR_DEVICE" Width="1.5" PointX="0.625" PointY="4.5" />
+        <EntityTypeShape EntityType="WebmvcModel1.SVR_COMPANY" Width="1.5" PointX="8.375" PointY="1.25" />
+        <EntityTypeShape EntityType="WebmvcModel1.SVR_USER" Width="1.5" PointX="6.5" PointY="2.75" />
+        <EntityTypeShape EntityType="WebmvcModel1.SVR_VIEW" Width="1.5" PointX="2.625" PointY="2.25" />
+        <AssociationConnector Association="WebmvcModel1.FK__SVR_BUMON__COMPA__36B12243" />
+        <AssociationConnector Association="WebmvcModel1.FK__SVR_USER__BUMON___3A81B327" />
+        <AssociationConnector Association="WebmvcModel1.FK__SVR_VIEW__BUMON___4F7CD00D" />
+        <AssociationConnector Association="WebmvcModel1.FK__SVR_USER__COMPAN__398D8EEE" />
+        <AssociationConnector Association="WebmvcModel1.FK__SVR_VIEW__IMEI__4E88ABD4" />
+        <AssociationConnector Association="WebmvcModel1.FK__SVR_VIEW__STORE___5070F446" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
