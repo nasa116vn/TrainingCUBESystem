@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="WebmvcModelStoreContainer" CdmEntityContainer="UserEntities">
+    <EntitySetMapping Name="SVR_USER">
+      <EntityTypeMapping TypeName="WebmvcModel.SVR_USER">
+        <MappingFragment StoreEntitySet="SVR_USER">
+          <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+          <ScalarProperty Name="COMPANY_ID" ColumnName="COMPANY_ID" />
+          <ScalarProperty Name="BUMON_ID" ColumnName="BUMON_ID" />
+          <ScalarProperty Name="INSERT_DATE" ColumnName="INSERT_DATE" />
+          <ScalarProperty Name="INSERT_USER" ColumnName="INSERT_USER" />
+          <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+          <ScalarProperty Name="UPDATE_USER" ColumnName="UPDATE_USER" />
+          <ScalarProperty Name="DEL_FLAG" ColumnName="DEL_FLAG" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

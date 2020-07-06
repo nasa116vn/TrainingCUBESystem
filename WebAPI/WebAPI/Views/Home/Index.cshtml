@@ -1,0 +1,93 @@
+﻿
+
+@{
+    ViewBag.Title = "Login";
+    Layout = null;
+
+}
+
+
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+    <title></title>
+
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link href="~/Content/login.css" rel="stylesheet" />
+    <style type="text/css">
+        /*body {
+            text-align: center;
+            background-color: lightcyan;
+        }
+
+        form {
+            display: inline-block;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: white;
+        }
+
+        .button {
+            color: white;
+            background-color: royalblue;
+            font-size: 20px;
+        }
+
+        .text {
+            font-size: 20px;
+        }*/
+
+
+    </style>
+   
+
+</head>
+
+
+<body>
+    @*<form id="login" method="post" action="/">
+
+            <div><h2><label>Account Login</label></h2></div>
+            <div>
+                <input type="text" id="user" name="username" placeholder="User name" class="text" />
+            </div>
+            <div><input type="password" id="pass" name="password" placeholder="Password" class="text" /></div>
+            <button class="button" id="submit">SIGN IN</button>
+        </form>*@
+    <div id="login">
+        <div class="container">
+            <div id="login-row" class="row justify-content-center align-items-center">
+                <div id="login-column" class="col-md-6">
+                    <div id="login-box" class="col-md-12">
+                        <form id="login" class="form" action="/" method="post">
+                            <h3 class="text-center text-info">Account Login</h3>
+                            <div class="form-group">
+                                <label for="username" class="text-info">Username:</label><br>
+                                <input type="text" name="username" id="username" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="text-info">Password:</label><br>
+                                <input type="password" name="password" id="password" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" name="submit" class="btn btn-info btn-md form-control" value="SIGN IN">
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+
+</html>

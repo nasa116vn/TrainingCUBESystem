@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WebmvcModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="SVR_USER">
+    <Key>
+      <PropertyRef Name="USERNAME" />
+    </Key>
+    <Property Name="USERNAME" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="PASSWORD" Type="varchar" MaxLength="100" />
+    <Property Name="COMPANY_ID" Type="int" />
+    <Property Name="BUMON_ID" Type="int" />
+    <Property Name="INSERT_DATE" Type="datetime" />
+    <Property Name="INSERT_USER" Type="varchar" MaxLength="20" />
+    <Property Name="UPDATE_DATE" Type="datetime" />
+    <Property Name="UPDATE_USER" Type="varchar" MaxLength="20" />
+    <Property Name="DEL_FLAG" Type="int" />
+  </EntityType>
+  <EntityContainer Name="WebmvcModelStoreContainer">
+    <EntitySet Name="SVR_USER" EntityType="Self.SVR_USER" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

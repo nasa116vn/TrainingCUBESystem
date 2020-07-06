@@ -1,0 +1,155 @@
+﻿
+@model IEnumerable<WebAPI.Models.StoreModel>
+@{
+    ViewBag.Title = "Store";
+    if (!(ViewContext.ViewBag.Title == "Login"))
+    {
+        Layout = "~/Views/Shared/_layout.cshtml";
+
+    }
+
+}
+@*<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <link href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css" rel="stylesheet" type="text/css" />*@
+
+<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js "></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+<link href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.datatables.net/plug-ins/1.10.21/dataRender/datetime.js"></script>
+<script src=" https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
+
+
+<script src="~/Scripts/Script/Store.js"></script>
+
+<style>
+    input:disabled {
+        cursor: not-allowed;
+        pointer-events: all !important;
+    }
+    button:disabled {
+        cursor: not-allowed;
+        pointer-events: all !important;
+    }
+    .btnDelete {
+        padding-right:10px;
+    }
+    #check {
+        width: 15px;
+        height: 15px;
+        margin-bottom: 10px;
+        margin-left: 55px;
+        margin-top: 10px;
+    }
+</style>
+
+
+<div>
+    <form>
+        <div>
+            <button type="button" class="btn btn-danger" id="addStore" data-toggle="modal" data-target="#staticBackdropStore" onclick="AddData();">Add</button>
+        </div>
+        <div>
+            <table class="table table-bordered" id="tableStore">
+                <thead>
+                    <tr>
+                        <th scope="col">STORE CD</th>
+                        <th scope="col">STORE_NAME</th>
+                        <th scope="col">INSERT USER</th>
+                        <th scope="col">INSERT DATE</th>
+                        <th scope="col">UPDATE USER</th>
+                        <th scope="col">UPDATE DATE</th>
+                        <th scope="col">DEL FLAG</th>
+                        <th scope="col">FUNCTION</th>
+
+                    </tr>
+
+                </thead>
+            </table>
+        </div>
+    </form>
+
+    @*Modal Add and Edit Store*@
+
+    <div class="modal fade" id="staticBackdropStore" data-backdrop="static" data-keyboard="true" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-info">
+                    <h5 class="modal-title" id="staticBackdropLabel"></h5>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-borderless">
+                        <tr>
+                            <th scope="row">STORE CD</th>
+                            <td><input type="text" name="STORE_CD" id="STORE_CD" placeholder="STORE_CD" /></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">STORE NAME</th>
+                            <td><input type="text" name="STORE_NAME" id="STORE_NAME" placeholder="STORE_NAME" /></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary"  id="submitSaveAdd" onclick="AddStore();">Save</button>
+                    <button type="submit" class="btn btn-primary" id="submitSaveEdit" onclick="Update();">Save</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    @*ModelDelete*@
+    <div class="modal fade" id="staticBackdropDelete" data-backdrop="static" data-keyboard="true" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-info">
+                    <h5 class="modal-title" id="staticBackdropLabel">Message</h5>
+                    @*<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>*@
+                </div>
+                <div class="modal-body">
+                    <p>Do you want delete select data?</p>
+                </div>
+                <div class="modal-footer">
+                    <input type="button" class="btn btn-primary" id="submitDelete" value="OK" />
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">CANCEL</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*Thong bao thanh cong*@
+    @*<div id="thongBao" class="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Message</h4>
+                </div>
+                <div class="modal-body">Success</div>
+                <div class="modal-footer">
+                    <button type="button" id="submitSuccess" class="btn btn-default" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>*@
+
+</div>
+
+
